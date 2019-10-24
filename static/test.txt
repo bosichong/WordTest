@@ -1,0 +1,1 @@
+source /Users/mac/pywork/django226/bin/activate
