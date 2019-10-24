@@ -47,7 +47,7 @@ ROOT_URLCONF = 'wordtest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],#设置网站模板根目录
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

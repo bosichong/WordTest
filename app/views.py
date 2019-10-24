@@ -5,4 +5,7 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    msg = '首页test测试'
+    return render(request, 'index.html', {'msg': msg,
+                                              })
+
