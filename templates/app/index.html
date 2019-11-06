@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block site_title %} 首页 | PyWordTest By J.Sky {% endblock %}
+
+{% block page %}
+    <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3>
+				{{ request.user.user_nick_name }}的单词题库
+			</h3>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>
+							题库名称
+						</th>
+						<th>
+							题库简介
+						</th>
+                        <th>
+							题目数量
+						</th>
+						<th>
+							考试次数
+						</th>
+						<th>
+							开始考试
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+
+                {% for foo in myqbs %}
+
+                    <tr>
+						<td>
+							{{ foo.0 }}
+						</td>
+						<td>
+							{{ foo.1 }}
+						</td>
+                        <td>
+							{{ foo.4 }}
+						</td>
+						<td>
+							{{ foo.2 }}
+						</td>
+						<td>
+							<a class="btn btn-success btn-sm" href="/app/qindex?qbid={{ foo.3 }}">开始考试</a>
+						</td>
+					</tr>
+
+                {% endfor %}
+
+
+
+				</tbody>
+			</table>
+
+        	<h3>
+				其他人公开的单词题库
+			</h3>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>
+							题库名称
+						</th>
+						<th>
+							题库简介
+						</th>
+                        <th>
+							题目数量
+						</th>
+						<th>
+							考试次数
+						</th>
+						<th>
+							开始考试
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+
+                {% for fo in opqbs %}
+
+                    <tr>
+						<td>
+							{{ fo.0 }}
+						</td>
+						<td>
+							{{ fo.1 }}
+						</td>
+                        <td>
+							{{ fo.4 }}
+						</td>
+						<td>
+							{{ fo.2 }}
+						</td>
+						<td>
+							<a class="btn btn-success btn-sm" href="/app/qindex?qbid={{ fo.3 }}">开始考试</a>
+						</td>
+					</tr>
+
+                {% endfor %}
+
+
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

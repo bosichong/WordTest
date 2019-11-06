@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block site_title %} 答题结束 | PyWordTest By J.Sky {% endblock %}
+
+{% block page %}
+
+    <br/>
+    <br/>
+
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <h3 class="text-center">
+                    {{ tit }} 考试结果
+                </h3>
+                <p class="text-center">
+                    {{ detail }}
+                </p>
+            <h3>本次考试得分：{{ score }}分</h3>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>
+                            当前考题
+                        </th>
+                        <th>
+                            正确答案
+                        </th>
+                        <th>
+                            本次回答
+                        </th>
+                        <th>
+                            是否对错
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for foo in qresult %}
+
+
+                        <tr class="{{ foo.4 }}">
+                        <td>
+                           {{ foo.0 }}
+                        </td>
+                        <td>
+                            {{ foo.1 }}
+                        </td>
+                        <td>
+                            {{ foo.2 }}
+                        </td>
+                        <td>
+                            <button type="button" class="{{ foo.3.0 }}"><span class="{{ foo.3.1 }}" aria-hidden="true"></span></button>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+
+
+
+                    </tbody>
+                </table>
+
+             <a href="/" type="button" class="btn btn-lg btn-block btn-success">返回首页</a>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

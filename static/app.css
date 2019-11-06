@@ -1,0 +1,16 @@
+
+
+
+
+.apptextarea{
+    font-size: 32px;
+    line-height: 32px;
+}
+
+.cut {
+overflow:hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+
+

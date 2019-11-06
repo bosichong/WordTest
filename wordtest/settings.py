@@ -15,7 +15,7 @@ SECRET_KEY = '=r0dm@=h9@^yo!f-kn^4sg@iiy$ub=t9%xciw0_y%_6!ntq#yw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -31,6 +31,7 @@ INSTALLED_APPS = [
 ]
 
 AUTH_USER_MODEL = 'app.UserProfile'
+LOGIN_URL="login" #（视图函数登录权限跳转要用）
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

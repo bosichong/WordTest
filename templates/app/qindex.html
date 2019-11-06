@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block site_title %} 考试首页 | PyWordTest By J.Sky {% endblock %}
+
+{% block page %}
+
+
+
+
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <h1 class="text-center">
+                    {{ tit }}
+                </h1>
+                <p class="text-center">
+                    {{ detail }}
+                </p>
+                <p class="text-center">
+                    本次考试共用{{ c }}道考题！
+                </p>
+                <a type="button" class="btn btn-info btn-lg btn-block" href="/app/q">点击开始考试</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

@@ -6,6 +6,7 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db.sqlite3</jdbc-url>
+      <default-dialect>SQLite</default-dialect>
       <driver-properties>
         <property name="enable_load_extension" value="true" />
       </driver-properties>

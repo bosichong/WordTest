@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block site_title %} 成绩分析页面| PyWordTest By J.Sky {% endblock %}
+
+{% block page %}
+
+
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3>
+				考试结果分析页面
+			</h3>
+			<table class="table">
+				<thead>
+
+
+
+					<tr>
+						<th>
+							题库名称
+						</th>
+						<th>
+							考试分数
+						</th>
+						<th>
+							所有时间
+						</th>
+						<th>
+							考试时间
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+
+                {% for e in ers %}
+                    <tr>
+						<td>
+							{{ e.0 }}
+						</td>
+						<td>
+							{{ e.1 }}
+						</td>
+						<td>
+							{{ e.2 }}
+						</td>
+						<td>
+							{{ e.3  }}
+						</td>
+					</tr>
+                {% endfor %}
+
+
+				</tbody>
+			</table>
+
+
+ 			<h3>
+				易错词排行
+			</h3>
+			<table class="table">
+				<thead>
+
+
+
+					<tr>
+						<th>
+							易错单词
+						</th>
+						<th>
+							错误次数
+						</th>
+
+					</tr>
+				</thead>
+				<tbody>
+
+                {% for e in ers1 %}
+                    <tr>
+						<td>
+							{{ e.0 }}
+						</td>
+						<td>
+							{{ e.1 }}
+						</td>
+					</tr>
+                {% endfor %}
+
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+{% endblock %}
